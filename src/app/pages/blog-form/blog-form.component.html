@@ -1,0 +1,32 @@
+<mat-card>
+    <div class="container text-center">
+        <img class="image" src="../../../assets/logo.png" alt="" width="150px" />
+    </div>
+    <h1 class="text-center">Add New Blog </h1>
+
+    <form (ngSubmit)="formSubmit()" class="action" class="container text-center">
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input required [(ngModel)]="blog.title" name="title" matInput placeholder="Enter title here" />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Content</mat-label>
+            <input required [(ngModel)]="blog.content" name="content" matInput placeholder="Enter content here" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Author</mat-label>
+            <input required [(ngModel)]="blog.author" name="author" matInput placeholder="Enter author here " />
+        </mat-form-field>
+        <br /><br>
+        <br /><br>
+        <div class="container text-center">
+            <button type="submit" mat-raised-button color="primary">Add </button>
+            <button style="margin-left:20px ;" mat-raised-button color="accent">Cancel </button>
+        </div>
+    </form>
+
+</mat-card>

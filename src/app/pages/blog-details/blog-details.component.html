@@ -1,0 +1,29 @@
+<mat-card>
+    <div class="container text-center">
+        <img class="image" src="../../../assets/logo.png" alt="" width="150px" />
+    </div>
+    <h1 class="text-center">Consult Blog </h1>
+    <form *ngIf="afficher" class="action" class="container text-center">
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input required [(ngModel)]="afficher.title" name="title" />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Content</mat-label>
+            <input required [(ngModel)]="afficher.content" name="content" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Author</mat-label>
+            <input required [(ngModel)]="afficher.author" name="author" />
+        </mat-form-field>
+        <br /><br>
+        <br /><br>
+        <td><button mat-raised-button [routerLink]="'/home/blogs'" color="accent"></button>
+
+    </form>
+
+</mat-card>

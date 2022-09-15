@@ -1,0 +1,48 @@
+<mat-card>
+    <h1>Blogs List</h1>
+    {{blogs| json}}
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container">
+                    <mat-list>
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <!-- table details -->
+                                <table class="table text-center">
+                                    <tr>
+                                        <td>Title</td>
+                                        <td>Content</td>
+                                        <td>Author </td>
+                                        <td>votes</td>
+
+                                    </tr>
+                                    <tr *ngFor="let item of blogs">
+
+                                        <td>
+                                            {{item.title}}
+                                        </td>
+                                        <td>{{item.content}}</td>
+                                        <td>
+                                            {{item.author}}
+                                        </td>
+                                        <td class="change">
+                                            <mat-radio-group onsubmit="Voter(v);">
+                                                <mat-radio-button value="upvote">Upvote</mat-radio-button>
+                                                <mat-radio-button type="radio" value="downvote">Downvote
+                                                </mat-radio-button>
+                                            </mat-radio-group>
+                                        </td>
+                                        <td><button mat-raised-button [routerLink]="'/home/blogs' + item.id "
+                                                color="accent">Consult</button></td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </mat-list>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
